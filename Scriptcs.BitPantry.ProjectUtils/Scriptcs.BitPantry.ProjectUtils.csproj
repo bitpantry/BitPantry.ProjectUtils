@@ -40,9 +40,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\BitPantry.Parsing.Strings.1.0.31847.5\lib\net45\BitPantry.Parsing.Strings.dll</HintPath>
     </Reference>
-    <Reference Include="BitPantry.ProjectUtils, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BitPantry.ProjectUtils, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\BitPantry.ProjectUtils.1.0.0.1\lib\net45\BitPantry.ProjectUtils.dll</HintPath>
+      <HintPath>..\packages\BitPantry.ProjectUtils.1.0.0.3\lib\net45\BitPantry.ProjectUtils.dll</HintPath>
     </Reference>
     <Reference Include="BitPantry.StringWriters, Version=1.0.1.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

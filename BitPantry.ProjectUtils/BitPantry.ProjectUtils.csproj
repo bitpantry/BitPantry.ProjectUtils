@@ -63,7 +63,7 @@
     <Compile Include="Output\IProcessLogger.cs" />
     <Compile Include="Component\MsBuild.cs" />
     <Compile Include="Component\Nuget.cs" />
-    <Compile Include="Output\NugetSourceConfiguration.cs" />
+    <Compile Include="NugetSourceConfiguration.cs" />
     <Compile Include="Output\ProcessOutput.cs" />
     <Compile Include="Output\NullConsolidatedStringWriter.cs" />
     <Compile Include="Output\NullConsolidatedStringWriterCollection.cs" />
