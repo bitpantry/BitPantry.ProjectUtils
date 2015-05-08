@@ -80,20 +80,38 @@ namespace Scriptcs.BitPantry.ProjectUtils
         public bool Push() { return Push(null); }
         public bool Push(NugetPushConfiguration config)
         {
+            ConsoleOutputUtil.WriteHeader("Pushing NuGet Package", _output);
+
+            var rootPackageFilename = Path.GetFileNameWithoutExtension(_proj.TargetProjectFile);
+
+            if(string.IsNullOrEmpty(rootPackageFilename))
+                throw new Exception(string.Format("Cannot derive root package file name from project path, \"{0}\"", _proj.TargetProjectFile));
+
             var targetPackagePath = Path.Combine(_proj.TargetProjectDirectoryPath, string.Format("{0}.{1}.nupkg",
-                _proj.TargetProjectFile,
+                rootPackageFilename,
                 _proj.AssemblyInfo.CurrentAssemblyInfoVersion));
 
             var targetSymbolsPath = Path.Combine(_proj.TargetProjectDirectoryPath, string.Format("{0}.{1}.symbols.nupkg",
-                _proj.TargetProjectFile,
+                rootPackageFilename,
                 _proj.AssemblyInfo.CurrentAssemblyInfoVersion));
 
-            if(!Push(targetPackagePath, config == null ? null : config.PackageConfiguration))
+            if (!Push(targetPackagePath, config == null ? null : config.PackageConfiguration))
+            {
+                _output.Warning.WriteLine("- Done with Errors -");
                 return false;
+            }
 
-            if (config != null && config.SymbolsConfiguration != null && !string.IsNullOrEmpty(config.SymbolsConfiguration.Source))
-                return Push(targetSymbolsPath, config.SymbolsConfiguration);
+            if (config != null && config.SymbolsConfiguration != null &&
+                !string.IsNullOrEmpty(config.SymbolsConfiguration.Source))
+            {
+                if (!Push(targetSymbolsPath, config.SymbolsConfiguration))
+                {
+                    _output.Warning.WriteLine("- Done with Errors -");
+                    return false;
+                }
+            }
 
+            _output.Standard.WriteLine("- Done -");
             return true;
         }
 
@@ -135,12 +153,7 @@ namespace Scriptcs.BitPantry.ProjectUtils
                 if (Pack(doCreateSymbolsPackage))
                 {
                     if (Push(config))
-                    {
-                        _output.Standard.WriteLine();
-                        _output.Standard.WriteLine(("- DONE -"));
-                        _output.Standard.WriteLine();
                         return true;
-                    }
                 }
             }
 
