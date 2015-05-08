@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Scriptcs.BitPantry.ProjectUtils</id>
+    <title>Scriptcs.BitPantry.ProjectUtils</title>
+    <version>$version$</version>
+    <authors>Jeff Hewitt</authors>
+    <owners>Jeff Hewitt</owners>
+    <licenseUrl>https://github.com/bitpantry/Scriptcs.BitPantry.ProjectUtils</licenseUrl>
+    <projectUrl>https://github.com/bitpantry/Scriptcs.BitPantry.ProjectUtils</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Scriptcs script pack for working with Visual Studio projects</description>
+  </metadata>
+  <files>
+  </files>
+</package>

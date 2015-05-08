@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>BitPantry.ProjectUtils</id>
+    <title>BitPantry.ProjectUtils</title>
+    <version>$version$</version>
+    <authors>Jeff Hewitt</authors>
+    <owners>Jeff Hewitt</owners>
+    <licenseUrl>https://github.com/bitpantry/BitPantry.ProjectUtils</licenseUrl>
+    <projectUrl>https://github.com/bitpantry/BitPantry.ProjectUtils</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Utilities for working with Visual Studio projects programatically</description>
+  </metadata>
+  <files>
+  </files>
+</package>
